@@ -10,7 +10,7 @@ spring:
     generate-ddl: true # DDL ??? ??? ??? ??? ??? ?? ???? ?? ??
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
       default_batch_fetch_size: 500
     properties:
       hibernate:
@@ -28,4 +28,4 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug
-#  org.hibernate.type: trace
+#    org.hibernate.type: trace
