@@ -1,6 +1,8 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.repository.MemberRepository;
+import jpabook.jpashop.service.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,18 +19,19 @@ public class MemberRepositoryTest {
 
     @Autowired
     MemberRepository memberRepository;
-
+    @Autowired
+    MemberService memberService;
 
     @Test
     @Rollback(value = false)
-    public void testMember() throws Exception {
+    public void testMember() {
         // given
         Member member = new Member();
         member.setName("memberA");
 
         // when
-        Long saveId = memberRepository.save(member);
-        Member findMember = memberRepository.find(saveId);
+        Long saveId = memberService.join(member);
+        Member findMember = memberRepository.findOne(saveId);
 
         // then
         Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
