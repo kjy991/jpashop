@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
-@Getter
+@Getter@Setter
 public abstract class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +33,7 @@ public abstract class Item {
      * stock 증가
       * @param quantity
      */
-    public void addStore(int quantity){
+    public void addStock(int quantity){
         this.stockQuantity += quantity;
     }
 
