@@ -1,6 +1,5 @@
 package jpabook.jpashop.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jpabook.jpashop.domain.item.Item;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -9,7 +8,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-import static javax.persistence.FetchType.*;
 import static javax.persistence.FetchType.LAZY;
 
 @Entity
@@ -36,7 +34,7 @@ public class OrderItem {
 
 
     //== 생성 메소드 ==//
-    public static OrderItem crateOrderItem(Item item, int orderPrice, int count) {
+    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
         OrderItem orderItem = new OrderItem();
         orderItem.setItem(item);
         orderItem.setOrderPrice(orderPrice);

@@ -30,12 +30,13 @@ public class MemberApiController {
                 .collect(Collectors.toList());
 
 
-        return new Result(collect);
+        return new Result(collect.size(),collect);
     }
 
     @Data
     @AllArgsConstructor
     static class Result<T> {
+        private int count;
         private T data;
     }
     @Data

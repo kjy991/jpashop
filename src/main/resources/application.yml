@@ -10,7 +10,7 @@ spring:
     generate-ddl: true
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       default_batch_fetch_size: 500
     properties:
       hibernate:
